@@ -6,20 +6,16 @@ class GeometricFeatureExtractor:
     A class for extracting geometric features from binary images (e.g., masks or segmented objects).
     """
 
-    def extract_features(self, image_path: str) -> dict[str, float]:
+    def extract_features(self, image: np.ndarray) -> dict[str, float]:
         """
         Extracts various geometric features from a binary image.
 
         Args:
-            image_path (str): The path to the binary image file.
+            image (np.ndarray): The input binary image as a NumPy array.
 
         Returns:
             dict[str, float]: A dictionary containing the calculated geometric features.
         """
-        image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-        if image is None:
-            raise FileNotFoundError(f"Image not found at: {image_path}")
-
         # Threshold to ensure binary image
         _, binary_image = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
 
@@ -42,12 +38,14 @@ class GeometricFeatureExtractor:
         # Calculate aspect ratio (width / height)
         x, y, w, h = cv2.boundingRect(largest_contour)
         features["aspect_ratio"] = float(w) / h if h != 0 else 0  # Avoid division by zero
+
         return features
     
 
 if __name__ == "__main__":
     extractor = GeometricFeatureExtractor()
     image_path = "demo/cat.jpg"
-    features = extractor.extract_features(image_path)
+    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    features = extractor.extract_features(image)
     for key, value in features.items():
         print(f"{key}: {value}")
