@@ -12,3 +12,6 @@ data/train.csv
 
 checkpoints/**.npy
 >>>>>>> 5f368f3 (init)
+
+count.py
+delete.py

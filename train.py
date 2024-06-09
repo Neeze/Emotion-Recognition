@@ -11,7 +11,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Emotion Recognition Model")
     parser.add_argument("--data", required=True, help="Path to the CSV data file")
     parser.add_argument("--save", default="checkpoints", help="Directory to save model checkpoints")
-    parser.add_argument("--test", action="store_true", help="Path to the CSV test data file")
+    parser.add_argument("--test", required=True, help="Path to the CSV test data file")
     args = parser.parse_args()
 
     # Data Loading

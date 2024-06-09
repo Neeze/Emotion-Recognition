@@ -19,12 +19,13 @@ pip install opencv-python scikit-learn scikit-image matplotlib seaborn numpy pan
 
 ### Usage
 
-Before you training, run `data_annot.py`:
+Before you training, run `download_data.py` and `data_annot.py`:
 ```bash
+python download_data.py
 python data_annot.py
 ```
 
-After run `data_annot.py` you will have this data structure
+After run `download_data.py` you will have this data structure
 
 ``` bash
 ├── data
