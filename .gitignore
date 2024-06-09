@@ -2,4 +2,13 @@
 data/train
 data/test
 
+<<<<<<< HEAD
 data/archive.zip
+=======
+data/archive.zip
+
+data/test.csv
+data/train.csv
+
+checkpoints/**.npy
+>>>>>>> 5f368f3 (init)
