@@ -1,0 +1,6 @@
+#!/bin/bash
+data/train
+data/test
+
+data/**
+data/archive.zip
