@@ -51,7 +51,11 @@ After run `download_data.py` you will have this data structure
 
 Use the `train.py` script. 
 ```bash
-python train.py --data path/to/train.csv --save checkpoints --test path/to/test.csv
+python train.py --data data/train.csv --save checkpoints --extractor haar --model mlp --test data/test.csv
+python train.py --data data/train.csv --save checkpoints --extractor sift --model mlp --test data/test.csv
+
+python train.py --data data/train.csv --save checkpoints --extractor haar --model svm --test data/test.csv
+python train.py --data data/train.csv --save checkpoints --extractor sift --model svm --test data/test.csv
 ```
 
 Use the `inference.py` script. 
