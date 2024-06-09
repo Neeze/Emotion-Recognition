@@ -5,8 +5,7 @@
 ### Prerequisites
 
 - Python 3.10.13
-- Libraries: opencv-python, scikit-learn, scikit-image, matplotlib, seaborn, numpy, pandas, tqdm
-- Download data from: [Kaggle](https://www.kaggle.com/datasets/msambare/fer2013/data)
+- Libraries: opencv-python, scikit-learn, scikit-image, matplotlib, seaborn, numpy, pandas, tqdm, gdown
 
 
 ### Installation
@@ -15,12 +14,17 @@
 
 2. Install Dependency
 ```bash
-pip install opencv-python scikit-learn scikit-image matplotlib seaborn numpy pandas tqdm --quiet
+pip install opencv-python scikit-learn scikit-image matplotlib seaborn numpy pandas tqdm gdown --quiet
 ```
 
 ### Usage
 
-Extract data download from [Kaggle](https://www.kaggle.com/datasets/msambare/fer2013/data) to data folder like this struct
+Before you training, run `data_annot.py`:
+```bash
+python data_annot.py
+```
+
+After run `data_annot.py` you will have this data structure
 
 ``` bash
 ├── data
@@ -41,11 +45,6 @@ Extract data download from [Kaggle](https://www.kaggle.com/datasets/msambare/fer
 │       ├── sad
 │       └── surprise
 
-```
-
-Before you training, run `data_annot.py`:
-```bash
-python data_annot.py
 ```
 
 

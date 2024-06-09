@@ -1,6 +1,17 @@
 import os
 import csv
 import random
+import gdown
+import gdown
+import zipfile
+
+url = "https://drive.google.com/file/d/1lbvrFHux0XHr7Ka-ayKHBOONYnxKctrS/view?usp=drive_link"
+output = "archive.zip"
+gdown.download(url=url, output=output, fuzzy=True)
+
+with zipfile.ZipFile(output, 'r') as zip_ref:
+    zip_ref.extractall('data')
+
 
 data_dir = "data"
 
